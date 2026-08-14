@@ -5,4 +5,12 @@
     <string name="ejercicio_1">Ejercicio 1: Promedio</string>
     <string name="ejercicio_2">Ejercicio 2: Salario</string>
     <string name="ejercicio_3">Ejercicio 3: Calculadora</string>
+
+    <string name="titulo_promedio">Ejercicio 1: Promedio</string>
+    <string name="nombre">Nombre</string>
+    <string name="nota_1">Nota 1</string>
+    <string name="nota_2">Nota 2</string>
+    <string name="nota_3">Nota 3</string>
+    <string name="calcular">Calcular</string>
+    <string name="regresar">Regresar</string>
 </resources>
