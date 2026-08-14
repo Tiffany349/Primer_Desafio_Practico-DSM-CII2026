@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DesafioPractico</string>
+
+    <string name="titulo_principal">Primer Desafío Práctico</string>
+    <string name="ejercicio_1">Ejercicio 1: Promedio</string>
+    <string name="ejercicio_2">Ejercicio 2: Salario</string>
+    <string name="ejercicio_3">Ejercicio 3: Calculadora</string>
+</resources>
