@@ -31,6 +31,7 @@ class SalarioActivity : AppCompatActivity() {
             val empleado = etEmpleado.text.toString().trim()
             val salarioTexto = etSalario.text.toString().trim()
 
+            // Validar nombre
             if (empleado.isEmpty()) {
                 etEmpleado.setError(
                     getString(R.string.error_empleado_vacio)
@@ -38,6 +39,7 @@ class SalarioActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Validar salario vacío
             if (salarioTexto.isEmpty()) {
                 etSalario.setError(
                     getString(R.string.error_salario_vacio)
@@ -46,8 +48,10 @@ class SalarioActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Convertir salario
             val salario = salarioTexto.toDoubleOrNull()
 
+            // Validar salario positivo
             if (salario == null || salario <= 0) {
                 etSalario.setError(
                     getString(R.string.error_salario_invalido)
@@ -56,40 +60,57 @@ class SalarioActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Calcular descuentos
             val afp = salario * 0.0725
             val isss = salario * 0.03
             val renta = calcularRenta(salario)
 
+            // Calcular totales
             val totalDescuentos = afp + isss + renta
             val salarioNeto = salario - totalDescuentos
 
+            // Formato de dos decimales
             val formato = DecimalFormat("0.00")
 
+            val salarioFormateado = formato.format(salario)
+            val rentaFormateada = formato.format(renta)
+            val afpFormateado = formato.format(afp)
+            val isssFormateado = formato.format(isss)
+            val totalDescuentosFormateado =
+                formato.format(totalDescuentos)
+            val salarioNetoFormateado =
+                formato.format(salarioNeto)
+
+            // Mostrar detalles de descuentos
             tvResultado.text = getString(
                 R.string.resultado_salario,
                 empleado,
-                formato.format(renta),
-                formato.format(afp),
-                formato.format(isss),
-                formato.format(totalDescuentos)
+                rentaFormateada,
+                afpFormateado,
+                isssFormateado,
+                totalDescuentosFormateado
             )
 
+            // Mostrar salario bruto
             tvSalarioBruto.text = getString(
                 R.string.salario_bruto,
-                formato.format(salario)
+                salarioFormateado
             )
 
+            // Mostrar salario neto
             tvSalarioNeto.text = getString(
                 R.string.salario_neto,
-                formato.format(salarioNeto)
+                salarioNetoFormateado
             )
         }
 
+        // Botón regresar
         btnRegresar.setOnClickListener {
             finish()
         }
     }
 
+    // Función para calcular la Renta según los tramos
     private fun calcularRenta(salario: Double): Double {
 
         return when {
@@ -111,6 +132,7 @@ class SalarioActivity : AppCompatActivity() {
         }
     }
 
+    // Función para hacer vibrar el teléfono
     private fun vibrar() {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
