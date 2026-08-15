@@ -23,6 +23,8 @@ class SalarioActivity : AppCompatActivity() {
         val btnRegresar = findViewById<Button>(R.id.btnRegresarSalario)
 
         val tvResultado = findViewById<TextView>(R.id.tvResultadoSalario)
+        val tvSalarioBruto = findViewById<TextView>(R.id.tvSalarioBruto)
+        val tvSalarioNeto = findViewById<TextView>(R.id.tvSalarioNeto)
 
         btnCalcular.setOnClickListener {
 
@@ -66,11 +68,19 @@ class SalarioActivity : AppCompatActivity() {
             tvResultado.text = getString(
                 R.string.resultado_salario,
                 empleado,
-                formato.format(salario),
                 formato.format(renta),
                 formato.format(afp),
                 formato.format(isss),
-                formato.format(totalDescuentos),
+                formato.format(totalDescuentos)
+            )
+
+            tvSalarioBruto.text = getString(
+                R.string.salario_bruto,
+                formato.format(salario)
+            )
+
+            tvSalarioNeto.text = getString(
+                R.string.salario_neto,
                 formato.format(salarioNeto)
             )
         }

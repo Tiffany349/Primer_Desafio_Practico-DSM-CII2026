@@ -40,11 +40,12 @@
 
     <string name="resultado_salario">
 Empleado: %1$s
-Salario bruto: $%2$s
-Renta: $%3$s
-AFP (7.25%%): $%4$s
-ISSS (3%%): $%5$s
-Total descuentos: $%6$s
-Salario neto: $%7$s
+Renta: $%2$s
+AFP (7.25%%): $%3$s
+ISSS (3%%): $%4$s
+Total descuentos: $%5$s
 </string>
+
+    <string name="salario_bruto">Salario bruto: $%1$s</string>
+    <string name="salario_neto">Salario neto: $%1$s</string>
 </resources>

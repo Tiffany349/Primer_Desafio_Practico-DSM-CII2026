@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="@dimen/margen_principal">
 
     <TextView
         android:id="@+id/tvTituloSalario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/titulo_salario"
-        android:textSize="26sp"
+        android:textSize="@dimen/texto_titulo"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="@dimen/margen_titulo" />
 
     <EditText
         android:id="@+id/etEmpleado"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/nombre_empleado"
         android:inputType="textPersonName"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/margen_campo" />
 
     <EditText
         android:id="@+id/etSalario"
@@ -31,21 +31,39 @@
         android:layout_height="wrap_content"
         android:hint="@string/salario_base"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="@dimen/margen_campo" />
 
     <Button
         android:id="@+id/btnCalcularSalario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/calcular"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="@dimen/margen_resultado" />
 
     <TextView
         android:id="@+id/tvResultadoSalario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginBottom="20dp" />
+        android:textSize="@dimen/texto_resultado"
+        android:layout_marginBottom="@dimen/margen_campo" />
+
+    <TextView
+        android:id="@+id/tvSalarioBruto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/texto_resultado"
+        android:textColor="@color/salario_bruto"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margen_campo" />
+
+    <TextView
+        android:id="@+id/tvSalarioNeto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/texto_resultado"
+        android:textColor="@color/salario_neto"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margen_resultado" />
 
     <Button
         android:id="@+id/btnRegresarSalario"
