@@ -82,10 +82,23 @@ class SalarioActivity : AppCompatActivity() {
 
     private fun calcularRenta(salario: Double): Double {
 
-        // Aquí colocaremos la tabla de tramos
-        // cuando me pases los valores exactos.
+        return when {
+            salario <= 472.00 -> {
+                0.0
+            }
 
-        return 0.0
+            salario <= 895.24 -> {
+                ((salario - 472.00) * 0.10) + 17.67
+            }
+
+            salario <= 2038.10 -> {
+                ((salario - 895.24) * 0.20) + 60.00
+            }
+
+            else -> {
+                ((salario - 2038.10) * 0.30) + 288.57
+            }
+        }
     }
 
     private fun vibrar() {
