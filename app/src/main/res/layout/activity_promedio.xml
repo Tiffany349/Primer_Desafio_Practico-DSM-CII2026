@@ -46,6 +46,22 @@
         android:inputType="numberDecimal"
         android:layout_marginBottom="20dp" />
 
+    <EditText
+        android:id="@+id/etNota4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nota_4"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etNota5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nota_5"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="20dp" />
+
     <Button
         android:id="@+id/btnCalcularPromedio"
         android:layout_width="match_parent"

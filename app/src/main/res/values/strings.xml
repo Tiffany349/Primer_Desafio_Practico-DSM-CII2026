@@ -8,9 +8,11 @@
 
     <string name="titulo_promedio">Ejercicio 1: Promedio</string>
     <string name="nombre">Nombre</string>
-    <string name="nota_1">Nota 1</string>
-    <string name="nota_2">Nota 2</string>
-    <string name="nota_3">Nota 3</string>
+    <string name="nota_1">Nota 1 (20%)</string>
+    <string name="nota_2">Nota 2 (20%)</string>
+    <string name="nota_3">Nota 3 (20%)</string>
+    <string name="nota_4">Nota 4 (20%)</string>
+    <string name="nota_5">Nota 5 (20%)</string>
     <string name="calcular">Calcular</string>
     <string name="regresar">Regresar</string>
 </resources>

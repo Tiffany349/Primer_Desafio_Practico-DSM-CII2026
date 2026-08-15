@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.DecimalFormat
 
 class PromedioActivity : AppCompatActivity() {
 
@@ -18,6 +19,8 @@ class PromedioActivity : AppCompatActivity() {
         val etNota1 = findViewById<EditText>(R.id.etNota1)
         val etNota2 = findViewById<EditText>(R.id.etNota2)
         val etNota3 = findViewById<EditText>(R.id.etNota3)
+        val etNota4 = findViewById<EditText>(R.id.etNota4)
+        val etNota5 = findViewById<EditText>(R.id.etNota5)
 
         val btnCalcular = findViewById<Button>(R.id.btnCalcularPromedio)
         val btnRegresar = findViewById<Button>(R.id.btnRegresarPromedio)
@@ -30,11 +33,15 @@ class PromedioActivity : AppCompatActivity() {
             val nota1Texto = etNota1.text.toString().trim()
             val nota2Texto = etNota2.text.toString().trim()
             val nota3Texto = etNota3.text.toString().trim()
+            val nota4Texto = etNota4.text.toString().trim()
+            val nota5Texto = etNota5.text.toString().trim()
 
             if (nombre.isEmpty() ||
                 nota1Texto.isEmpty() ||
                 nota2Texto.isEmpty() ||
-                nota3Texto.isEmpty()
+                nota3Texto.isEmpty() ||
+                nota4Texto.isEmpty() ||
+                nota5Texto.isEmpty()
             ) {
                 Toast.makeText(
                     this,
@@ -48,10 +55,14 @@ class PromedioActivity : AppCompatActivity() {
             val nota1 = nota1Texto.toDouble()
             val nota2 = nota2Texto.toDouble()
             val nota3 = nota3Texto.toDouble()
+            val nota4 = nota4Texto.toDouble()
+            val nota5 = nota5Texto.toDouble()
 
             if (nota1 < 0 || nota1 > 10 ||
                 nota2 < 0 || nota2 > 10 ||
-                nota3 < 0 || nota3 > 10
+                nota3 < 0 || nota3 > 10 ||
+                nota4 < 0 || nota4 > 10 ||
+                nota5 < 0 || nota5 > 10
             ) {
                 Toast.makeText(
                     this,
@@ -62,10 +73,25 @@ class PromedioActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val promedio = (nota1 + nota2 + nota3) / 3
+            val promedio = calcularPromedio(
+                nota1,
+                nota2,
+                nota3,
+                nota4,
+                nota5
+            )
+
+            val formato = DecimalFormat("0.00")
+            val promedioFormateado = formato.format(promedio)
+
+            val estado = if (promedio >= 6.0) {
+                "Aprobado"
+            } else {
+                "Reprobado"
+            }
 
             tvResultado.text =
-                "$nombre, tu promedio es %.2f".format(promedio)
+                "$nombre, tu promedio es $promedioFormateado\n$estado"
         }
 
         btnRegresar.setOnClickListener {
@@ -73,5 +99,22 @@ class PromedioActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun calcularPromedio(
+        nota1: Double,
+        nota2: Double,
+        nota3: Double,
+        nota4: Double,
+        nota5: Double
+    ): Double {
+
+        val ponderacion = 0.20
+
+        return (nota1 * ponderacion) +
+                (nota2 * ponderacion) +
+                (nota3 * ponderacion) +
+                (nota4 * ponderacion) +
+                (nota5 * ponderacion)
     }
 }
