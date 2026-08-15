@@ -49,6 +49,19 @@ class PromedioActivity : AppCompatActivity() {
             val nota2 = nota2Texto.toDouble()
             val nota3 = nota3Texto.toDouble()
 
+            if (nota1 < 0 || nota1 > 10 ||
+                nota2 < 0 || nota2 > 10 ||
+                nota3 < 0 || nota3 > 10
+            ) {
+                Toast.makeText(
+                    this,
+                    "Las notas deben estar entre 0 y 10",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                return@setOnClickListener
+            }
+
             val promedio = (nota1 + nota2 + nota3) / 3
 
             tvResultado.text =
