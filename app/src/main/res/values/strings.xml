@@ -37,4 +37,14 @@
     <string name="error_empleado_vacio">Ingresa el nombre del empleado</string>
     <string name="error_salario_vacio">Ingresa el salario</string>
     <string name="error_salario_invalido">El salario debe ser mayor que cero</string>
+
+    <string name="resultado_salario">
+Empleado: %1$s
+Salario bruto: $%2$s
+Renta: $%3$s
+AFP (7.25%%): $%4$s
+ISSS (3%%): $%5$s
+Total descuentos: $%6$s
+Salario neto: $%7$s
+</string>
 </resources>

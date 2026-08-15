@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.text.DecimalFormat
 
 class SalarioActivity : AppCompatActivity() {
 
@@ -52,11 +53,39 @@ class SalarioActivity : AppCompatActivity() {
                 vibrar()
                 return@setOnClickListener
             }
+
+            val afp = salario * 0.0725
+            val isss = salario * 0.03
+            val renta = calcularRenta(salario)
+
+            val totalDescuentos = afp + isss + renta
+            val salarioNeto = salario - totalDescuentos
+
+            val formato = DecimalFormat("0.00")
+
+            tvResultado.text = getString(
+                R.string.resultado_salario,
+                empleado,
+                formato.format(salario),
+                formato.format(renta),
+                formato.format(afp),
+                formato.format(isss),
+                formato.format(totalDescuentos),
+                formato.format(salarioNeto)
+            )
         }
 
         btnRegresar.setOnClickListener {
             finish()
         }
+    }
+
+    private fun calcularRenta(salario: Double): Double {
+
+        // Aquí colocaremos la tabla de tramos
+        // cuando me pases los valores exactos.
+
+        return 0.0
     }
 
     private fun vibrar() {
