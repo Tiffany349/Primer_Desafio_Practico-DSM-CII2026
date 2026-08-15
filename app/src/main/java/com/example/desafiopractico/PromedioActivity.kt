@@ -45,10 +45,9 @@ class PromedioActivity : AppCompatActivity() {
             ) {
                 Toast.makeText(
                     this,
-                    "Completa todos los campos",
+                    getString(R.string.error_campos_vacios),
                     Toast.LENGTH_SHORT
                 ).show()
-
                 return@setOnClickListener
             }
 
@@ -66,7 +65,7 @@ class PromedioActivity : AppCompatActivity() {
             ) {
                 Toast.makeText(
                     this,
-                    "Las notas deben estar entre 0 y 10",
+                    getString(R.string.error_notas_rango),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -85,13 +84,17 @@ class PromedioActivity : AppCompatActivity() {
             val promedioFormateado = formato.format(promedio)
 
             val estado = if (promedio >= 6.0) {
-                "Aprobado"
+                getString(R.string.estado_aprobado)
             } else {
-                "Reprobado"
+                getString(R.string.estado_reprobado)
             }
 
-            tvResultado.text =
-                "$nombre, tu promedio es $promedioFormateado\n$estado"
+            tvResultado.text = getString(
+                R.string.resultado_promedio,
+                nombre,
+                promedioFormateado,
+                estado
+            )
         }
 
         btnRegresar.setOnClickListener {
