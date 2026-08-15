@@ -27,4 +27,10 @@
     <string name="canal_notificacion_nombre">Resultados del promedio</string>
     <string name="notificacion_titulo">Resultado del promedio</string>
     <string name="notificacion_contenido">Promedio: %1$s - %2$s</string>
+
+
+
+    <string name="titulo_salario">Ejercicio 2: Salario</string>
+    <string name="nombre_empleado">Nombre del empleado</string>
+    <string name="salario_base">Salario base</string>
 </resources>

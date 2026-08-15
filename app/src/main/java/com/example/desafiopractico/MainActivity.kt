@@ -17,5 +17,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PromedioActivity::class.java)
             startActivity(intent)
         }
+        val btnEjercicio2 = findViewById<Button>(R.id.btnEjercicio2)
+
+        btnEjercicio2.setOnClickListener {
+            val intent = Intent(this, SalarioActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
