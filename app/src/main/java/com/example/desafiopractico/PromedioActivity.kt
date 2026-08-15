@@ -1,12 +1,18 @@
 package com.example.desafiopractico
 
+import android.Manifest
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import java.text.DecimalFormat
 
 class PromedioActivity : AppCompatActivity() {
@@ -14,6 +20,8 @@ class PromedioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_promedio)
+
+        solicitarPermisoNotificaciones()
 
         val etNombre = findViewById<EditText>(R.id.etNombre)
         val etNota1 = findViewById<EditText>(R.id.etNota1)
@@ -48,6 +56,7 @@ class PromedioActivity : AppCompatActivity() {
                     getString(R.string.error_campos_vacios),
                     Toast.LENGTH_SHORT
                 ).show()
+
                 return@setOnClickListener
             }
 
@@ -95,10 +104,19 @@ class PromedioActivity : AppCompatActivity() {
                 promedioFormateado,
                 estado
             )
+
+            mostrarNotificacion(
+                promedioFormateado,
+                estado
+            )
         }
 
         btnRegresar.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(
+                this,
+                MainActivity::class.java
+            )
+
             startActivity(intent)
             finish()
         }
@@ -119,5 +137,82 @@ class PromedioActivity : AppCompatActivity() {
                 (nota3 * ponderacion) +
                 (nota4 * ponderacion) +
                 (nota5 * ponderacion)
+    }
+
+    private fun solicitarPermisoNotificaciones() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+
+            if (checkSelfPermission(
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+
+                requestPermissions(
+                    arrayOf(
+                        Manifest.permission.POST_NOTIFICATIONS
+                    ),
+                    100
+                )
+            }
+        }
+    }
+
+    private fun mostrarNotificacion(
+        promedio: String,
+        estado: String
+    ) {
+
+        val channelId = "promedio_channel"
+
+        val notificationManager =
+            getSystemService(
+                NotificationManager::class.java
+            )
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val channel = NotificationChannel(
+                channelId,
+                getString(
+                    R.string.canal_notificacion_nombre
+                ),
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+
+            notificationManager.createNotificationChannel(
+                channel
+            )
+        }
+
+        val contenido = getString(
+            R.string.notificacion_contenido,
+            promedio,
+            estado
+        )
+
+        val notification = NotificationCompat.Builder(
+            this,
+            channelId
+        )
+            .setSmallIcon(
+                android.R.drawable.ic_dialog_info
+            )
+            .setContentTitle(
+                getString(
+                    R.string.notificacion_titulo
+                )
+            )
+            .setContentText(contenido)
+            .setPriority(
+                NotificationCompat.PRIORITY_DEFAULT
+            )
+            .setAutoCancel(true)
+            .build()
+
+        notificationManager.notify(
+            1,
+            notification
+        )
     }
 }

@@ -15,9 +15,16 @@
     <string name="nota_5">Nota 5 (20%)</string>
     <string name="calcular">Calcular</string>
     <string name="regresar">Regresar</string>
+
     <string name="error_campos_vacios">Completa todos los campos</string>
     <string name="error_notas_rango">Las notas deben estar entre 0 y 10</string>
+
     <string name="resultado_promedio">%1$s, tu promedio es %2$s\n%3$s</string>
+
     <string name="estado_aprobado">Aprobado</string>
     <string name="estado_reprobado">Reprobado</string>
+
+    <string name="canal_notificacion_nombre">Resultados del promedio</string>
+    <string name="notificacion_titulo">Resultado del promedio</string>
+    <string name="notificacion_contenido">Promedio: %1$s - %2$s</string>
 </resources>
