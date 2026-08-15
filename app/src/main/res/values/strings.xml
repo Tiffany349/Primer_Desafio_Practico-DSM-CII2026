@@ -33,4 +33,8 @@
     <string name="titulo_salario">Ejercicio 2: Salario</string>
     <string name="nombre_empleado">Nombre del empleado</string>
     <string name="salario_base">Salario base</string>
+
+    <string name="error_empleado_vacio">Ingresa el nombre del empleado</string>
+    <string name="error_salario_vacio">Ingresa el salario</string>
+    <string name="error_salario_invalido">El salario debe ser mayor que cero</string>
 </resources>
