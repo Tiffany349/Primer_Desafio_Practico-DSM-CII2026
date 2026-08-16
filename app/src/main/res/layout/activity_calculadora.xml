@@ -3,7 +3,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fondo_principal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
             android:text="@string/titulo_calculadora"
             android:textSize="@dimen/texto_titulo"
             android:textStyle="bold"
+            android:textColor="@color/fucsia_oscuro"
             android:gravity="center"
             android:layout_marginBottom="@dimen/margen_titulo" />
 
@@ -26,7 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/numero_1"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
             android:inputType="numberDecimal|numberSigned"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
             android:layout_marginBottom="@dimen/margen_campo" />
 
         <EditText
@@ -34,7 +40,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/numero_2"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
             android:inputType="numberDecimal|numberSigned"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
             android:layout_marginBottom="@dimen/margen_resultado" />
 
         <TextView
@@ -43,7 +53,11 @@
             android:layout_height="wrap_content"
             android:text="@string/resultado_calculadora"
             android:textSize="@dimen/texto_resultado"
+            android:textStyle="bold"
+            android:textColor="@color/fucsia_oscuro"
             android:gravity="center"
+            android:background="@color/blanco"
+            android:padding="16dp"
             android:layout_marginBottom="@dimen/margen_resultado" />
 
         <LinearLayout
@@ -54,36 +68,52 @@
             <Button
                 android:id="@+id/btnSuma"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/suma"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_suma"
                 android:contentDescription="@string/suma" />
 
             <Button
                 android:id="@+id/btnResta"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/resta"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_resta"
                 android:contentDescription="@string/resta" />
 
             <Button
                 android:id="@+id/btnMultiplicacion"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/multiplicacion"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_multiplicacion"
                 android:contentDescription="@string/multiplicacion" />
 
             <Button
                 android:id="@+id/btnDivision"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/division"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_division"
                 android:contentDescription="@string/division" />
 
@@ -97,18 +127,26 @@
             <Button
                 android:id="@+id/btnExponente"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/exponente"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_exponente"
                 android:contentDescription="@string/exponente" />
 
             <Button
                 android:id="@+id/btnRaiz"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/altura_boton_calculadora"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/espacio_boton"
                 android:text="@string/raiz"
+                android:textColor="@color/blanco"
+                android:textSize="12sp"
+                android:background="@drawable/boton_fucsia"
                 android:drawableTop="@drawable/ic_raiz"
                 android:contentDescription="@string/raiz" />
 
@@ -117,8 +155,10 @@
         <Button
             android:id="@+id/btnVerHistorial"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/altura_boton"
             android:text="@string/ver_historial"
+            android:textColor="@color/blanco"
+            android:background="@drawable/boton_fucsia"
             android:layout_marginTop="@dimen/margen_resultado" />
 
         <TextView
@@ -126,15 +166,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/historial_vacio"
+            android:textColor="@color/texto_principal"
             android:textSize="16sp"
-            android:padding="12dp"
+            android:background="@color/blanco"
+            android:padding="16dp"
             android:layout_marginTop="@dimen/margen_campo" />
 
         <Button
             android:id="@+id/btnRegresarCalculadora"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/altura_boton"
             android:text="@string/regresar"
+            android:textColor="@color/blanco"
+            android:background="@drawable/boton_fucsia"
             android:layout_marginTop="@dimen/margen_resultado" />
 
     </LinearLayout>

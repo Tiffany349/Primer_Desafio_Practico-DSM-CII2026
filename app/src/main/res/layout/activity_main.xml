@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="24dp">
+    android:padding="@dimen/margen_principal"
+    android:background="@color/fondo_principal">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/titulo_principal"
-        android:textSize="28sp"
+        android:textSize="@dimen/texto_titulo"
         android:textStyle="bold"
-        android:layout_marginBottom="32dp" />
+        android:textColor="@color/fucsia_oscuro"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/margen_titulo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textColor="@color/texto_secundario"
+        android:gravity="center"
+        android:layout_marginBottom="28dp" />
 
     <Button
         android:id="@+id/btnEjercicio1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/altura_boton"
         android:text="@string/ejercicio_1"
-        android:layout_marginBottom="16dp" />
+        android:textColor="@color/blanco"
+        android:background="@drawable/boton_fucsia"
+        android:layout_marginBottom="@dimen/margen_campo" />
 
     <Button
         android:id="@+id/btnEjercicio2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/altura_boton"
         android:text="@string/ejercicio_2"
-        android:layout_marginBottom="16dp" />
+        android:textColor="@color/blanco"
+        android:background="@drawable/boton_fucsia"
+        android:layout_marginBottom="@dimen/margen_campo" />
 
     <Button
         android:id="@+id/btnEjercicio3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ejercicio_3" />
+        android:layout_height="@dimen/altura_boton"
+        android:text="@string/ejercicio_3"
+        android:textColor="@color/blanco"
+        android:background="@drawable/boton_fucsia" />
 
 </LinearLayout>

@@ -1,88 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:background="@color/fondo_principal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_promedio"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
-
-    <EditText
-        android:id="@+id/etNombre"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nombre"
-        android:inputType="text"
-        android:layout_marginBottom="12dp" />
+        android:orientation="vertical"
+        android:padding="@dimen/margen_principal">
 
-    <EditText
-        android:id="@+id/etNota1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/nota_1"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_promedio"
+            android:textSize="@dimen/texto_titulo"
+            android:textStyle="bold"
+            android:textColor="@color/fucsia_oscuro"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margen_titulo" />
 
-    <EditText
-        android:id="@+id/etNota2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/nota_2"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="text"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_campo" />
 
-    <EditText
-        android:id="@+id/etNota3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/nota_3"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="20dp" />
+        <EditText
+            android:id="@+id/etNota1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nota_1"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="numberDecimal"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_campo" />
 
-    <EditText
-        android:id="@+id/etNota4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/nota_4"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/etNota2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nota_2"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="numberDecimal"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_campo" />
 
-    <EditText
-        android:id="@+id/etNota5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/nota_5"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="20dp" />
+        <EditText
+            android:id="@+id/etNota3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nota_3"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="numberDecimal"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_campo" />
 
-    <Button
-        android:id="@+id/btnCalcularPromedio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/calcular"
-        android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/etNota4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nota_4"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="numberDecimal"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_campo" />
 
-    <TextView
-        android:id="@+id/tvResultadoPromedio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp" />
+        <EditText
+            android:id="@+id/etNota5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nota_5"
+            android:textColor="@color/texto_principal"
+            android:textColorHint="@color/texto_secundario"
+            android:inputType="numberDecimal"
+            android:background="@drawable/campo_fondo"
+            android:padding="12dp"
+            android:layout_marginBottom="@dimen/margen_resultado" />
 
-    <Button
-        android:id="@+id/btnRegresarPromedio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/regresar" />
+        <Button
+            android:id="@+id/btnCalcularPromedio"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/altura_boton"
+            android:text="@string/calcular"
+            android:textColor="@color/blanco"
+            android:background="@drawable/boton_fucsia"
+            android:layout_marginBottom="@dimen/margen_resultado" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvResultadoPromedio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/texto_resultado"
+            android:textStyle="bold"
+            android:textColor="@color/fucsia_oscuro"
+            android:gravity="center"
+            android:background="@color/blanco"
+            android:padding="16dp"
+            android:layout_marginBottom="@dimen/margen_resultado" />
+
+        <Button
+            android:id="@+id/btnRegresarPromedio"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/altura_boton"
+            android:text="@string/regresar"
+            android:textColor="@color/blanco"
+            android:background="@drawable/boton_fucsia" />
+
+    </LinearLayout>
+
+</ScrollView>

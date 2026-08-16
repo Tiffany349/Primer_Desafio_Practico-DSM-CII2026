@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="margen_principal">24dp</dimen>
-    <dimen name="margen_titulo">24dp</dimen>
-    <dimen name="margen_campo">16dp</dimen>
-    <dimen name="margen_resultado">20dp</dimen>
+    <dimen name="margen_principal">20dp</dimen>
+    <dimen name="margen_titulo">20dp</dimen>
+    <dimen name="margen_campo">12dp</dimen>
+    <dimen name="margen_resultado">16dp</dimen>
 
     <dimen name="texto_titulo">26sp</dimen>
     <dimen name="texto_resultado">18sp</dimen>
+
+    <dimen name="altura_boton">50dp</dimen>
+    <dimen name="altura_boton_calculadora">68dp</dimen>
+    <dimen name="tamano_icono">24dp</dimen>
+    <dimen name="espacio_boton">4dp</dimen>
+    <dimen name="padding_boton">6dp</dimen>
 
 </resources>
