@@ -1,120 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/margen_principal">
-
-    <TextView
-        android:id="@+id/tvTituloCalculadora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_calculadora"
-        android:textSize="@dimen/texto_titulo"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="@dimen/margen_titulo" />
-
-    <EditText
-        android:id="@+id/etNumero1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/numero_1"
-        android:inputType="numberDecimal|numberSigned"
-        android:layout_marginBottom="@dimen/margen_campo" />
-
-    <EditText
-        android:id="@+id/etNumero2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/numero_2"
-        android:inputType="numberDecimal|numberSigned"
-        android:layout_marginBottom="@dimen/margen_resultado" />
-
-    <TextView
-        android:id="@+id/tvResultadoCalculadora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/resultado_calculadora"
-        android:textSize="@dimen/texto_resultado"
-        android:gravity="center"
-        android:layout_marginBottom="@dimen/margen_resultado" />
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="@dimen/margen_principal">
+
+        <TextView
+            android:id="@+id/tvTituloCalculadora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_calculadora"
+            android:textSize="@dimen/texto_titulo"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margen_titulo" />
+
+        <EditText
+            android:id="@+id/etNumero1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/numero_1"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_marginBottom="@dimen/margen_campo" />
+
+        <EditText
+            android:id="@+id/etNumero2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/numero_2"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_marginBottom="@dimen/margen_resultado" />
+
+        <TextView
+            android:id="@+id/tvResultadoCalculadora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resultado_calculadora"
+            android:textSize="@dimen/texto_resultado"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margen_resultado" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSuma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/suma"
+                android:drawableTop="@drawable/ic_suma"
+                android:contentDescription="@string/suma" />
+
+            <Button
+                android:id="@+id/btnResta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/resta"
+                android:drawableTop="@drawable/ic_resta"
+                android:contentDescription="@string/resta" />
+
+            <Button
+                android:id="@+id/btnMultiplicacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/multiplicacion"
+                android:drawableTop="@drawable/ic_multiplicacion"
+                android:contentDescription="@string/multiplicacion" />
+
+            <Button
+                android:id="@+id/btnDivision"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/division"
+                android:drawableTop="@drawable/ic_division"
+                android:contentDescription="@string/division" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnExponente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/exponente"
+                android:drawableTop="@drawable/ic_exponente"
+                android:contentDescription="@string/exponente" />
+
+            <Button
+                android:id="@+id/btnRaiz"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/raiz"
+                android:drawableTop="@drawable/ic_raiz"
+                android:contentDescription="@string/raiz" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btnSuma"
-            android:layout_width="0dp"
+            android:id="@+id/btnVerHistorial"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/suma"
-            android:drawableTop="@drawable/ic_suma"
-            android:contentDescription="@string/suma" />
+            android:text="@string/ver_historial"
+            android:layout_marginTop="@dimen/margen_resultado" />
+
+        <TextView
+            android:id="@+id/tvHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/historial_vacio"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:layout_marginTop="@dimen/margen_campo" />
 
         <Button
-            android:id="@+id/btnResta"
-            android:layout_width="0dp"
+            android:id="@+id/btnRegresarCalculadora"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/resta"
-            android:drawableTop="@drawable/ic_resta"
-            android:contentDescription="@string/resta" />
-
-        <Button
-            android:id="@+id/btnMultiplicacion"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/multiplicacion"
-            android:drawableTop="@drawable/ic_multiplicacion"
-            android:contentDescription="@string/multiplicacion" />
-
-        <Button
-            android:id="@+id/btnDivision"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/division"
-            android:drawableTop="@drawable/ic_division"
-            android:contentDescription="@string/division" />
+            android:text="@string/regresar"
+            android:layout_marginTop="@dimen/margen_resultado" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnExponente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/exponente"
-            android:drawableTop="@drawable/ic_exponente"
-            android:contentDescription="@string/exponente" />
-
-        <Button
-            android:id="@+id/btnRaiz"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/raiz"
-            android:drawableTop="@drawable/ic_raiz"
-            android:contentDescription="@string/raiz" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnRegresarCalculadora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/regresar"
-        android:layout_marginTop="@dimen/margen_resultado" />
-
-</LinearLayout>
+</ScrollView>

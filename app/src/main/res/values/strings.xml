@@ -65,4 +65,7 @@ Total descuentos: $%5$s
     <string name="error_campos_calculadora">Completa los dos números</string>
     <string name="error_division_cero">No se puede dividir entre cero</string>
     <string name="error_numero_invalido">Ingresa un número válido</string>
+
+    <string name="ver_historial">Ver historial</string>
+    <string name="historial_vacio">No hay operaciones guardadas</string>
 </resources>
