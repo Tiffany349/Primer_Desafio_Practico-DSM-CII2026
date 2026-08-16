@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesafioPractico">
         <activity
+            android:name=".CalculadoraActivity"
+            android:exported="false" />
+        <activity
             android:name=".SalarioActivity"
             android:exported="false" />
         <activity android:name=".PromedioActivity" />

@@ -29,7 +29,6 @@
     <string name="notificacion_contenido">Promedio: %1$s - %2$s</string>
 
 
-
     <string name="titulo_salario">Ejercicio 2: Salario</string>
     <string name="nombre_empleado">Nombre del empleado</string>
     <string name="salario_base">Salario base</string>
@@ -48,4 +47,22 @@ Total descuentos: $%5$s
 
     <string name="salario_bruto">Salario bruto: $%1$s</string>
     <string name="salario_neto">Salario neto: $%1$s</string>
+
+
+
+    <string name="titulo_calculadora">Ejercicio 3: Calculadora</string>
+    <string name="numero_1">Número 1</string>
+    <string name="numero_2">Número 2</string>
+    <string name="resultado_calculadora">Resultado</string>
+
+    <string name="suma">+</string>
+    <string name="resta">−</string>
+    <string name="multiplicacion">×</string>
+    <string name="division">÷</string>
+    <string name="exponente">xʸ</string>
+    <string name="raiz">√</string>
+
+    <string name="error_campos_calculadora">Completa los dos números</string>
+    <string name="error_division_cero">No se puede dividir entre cero</string>
+    <string name="error_numero_invalido">Ingresa un número válido</string>
 </resources>
